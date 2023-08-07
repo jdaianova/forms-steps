@@ -1,11 +1,13 @@
 function ResultTable({ arrDays }) {
-
   arrDays.map((item, i) => {
     if (i < arrDays.length - 1) {
       if (Date.parse(item.date) < Date.parse(arrDays[i + 1].date)) {
         let temp = item;
         arrDays[i] = arrDays[i + 1];
         arrDays[i + 1] = temp;
+      } else if (Date.parse(item.date) === Date.parse(arrDays[i + 1].date)) {
+         arrDays[i + 1].km = Number(item.km) + Number(arrDays[i + 1].km);
+         arrDays.splice(i,1);
       };
     };
   });
