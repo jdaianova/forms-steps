@@ -12,6 +12,15 @@ function ResultTable({ arrDays }) {
     };
   });
 
+  arrDays.map((item, i) => {
+    if (i < arrDays.length - 1) {
+      if (Date.parse(item.date) === Date.parse(arrDays[i + 1].date)) {
+         arrDays[i + 1].km = Number(item.km) + Number(arrDays[i + 1].km);
+         arrDays.splice(i,1);
+      };
+    };
+  });
+
   const deleteItem = (e) => {
     e.target.parentElement.remove();
   };
@@ -30,7 +39,7 @@ function ResultTable({ arrDays }) {
             <div className="result-table-columns" key={i}>
               <div className="lable-text table-column">
                 {new Date(item.date).getDate()}.
-                {new Date(item.date).getMonth()}.
+                {new Date(item.date).getMonth()+1}.
                 {new Date(item.date).getFullYear()}
               </div>
               <div className="lable-text table-column">{item.km}</div>
