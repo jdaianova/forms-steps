@@ -28,6 +28,7 @@ function DataForm() {
                 <div>
                     <label htmlFor="date" className="lable-text">Дата (дд.мм.гг)</label>
                     <input
+                        required
                         id="date"
                         name='date'
                         type="date"
@@ -38,6 +39,7 @@ function DataForm() {
                 <div>
                     <label htmlFor="km" className="lable-text">Пройдено (км)</label>
                     <input
+                        required
                         id="km"
                         name='km'
                         type="number"
