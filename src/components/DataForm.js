@@ -40,6 +40,7 @@ function DataForm() {
                     <label htmlFor="km" className="lable-text">Пройдено (км)</label>
                     <input
                         required
+                        min="0"
                         id="km"
                         name='km'
                         type="number"
